@@ -45,34 +45,41 @@ if [ "$ANY_MISSING" = true ]; then
     exit 1
 fi
 
-# Create symbolic links
-ln -sf "$alias" "$PWD/.oh_my_zsh/lib/alias.zsh"
+# Set flag to false
+ANY_MISSING=false
 
-# Check exit code
+# Create symbolic links & check exit code for each link
+ln -sf "$alias" "$PWD/.oh_my_zsh/lib/alias.zsh"
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}alias.zsh is linked${NC}" 
 else
     echo -e "${RED}alias.zsh isn't linked${NC}"
+    ANY_MISSING=true
 fi
 
 
 ln -sf "$theme1" "$PWD/.oh_my_zsh/themes/my-theme.zsh-theme"
-
 # Check exit code
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}my-theme.zsh-theme is linked${NC}" 
 else
     echo -e "${RED}my-theme.zsh-theme isn't linked${NC}"
+    ANY_MISSING=true
 fi
 
 
 ln -sf "$theme2" "$PWD/.oh_my_zsh/themes/old-theme.zsh-theme"
-
 # Check exit code
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}old-theme.zsh-theme is linked${NC}" 
 else
     echo -e "${RED}old-theme.zsh-theme isn't linked${NC}"
+    ANY_MISSING=true
 fi
 
-echo -e "${BLUE}All done.${NC}"
+# Check if the links were successful
+if [ "$ANY_MISSING" = true ]; then
+    echo -e "${RED}One or more of the links did not work${NC}"
+else   
+    echo -e "${BLUE}All done.${NC}"
+fi

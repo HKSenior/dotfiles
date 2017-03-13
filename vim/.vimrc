@@ -126,9 +126,10 @@
     " Use the dark theme
     set background=dark
 
+    " Tomorrow-Night-Bright
     " Set colorscheme
     colorscheme jellybeans
-
+    
     " Use hybrid custom terminal colors
     let g:hybrid_custom_term_colors = 1
 
@@ -256,7 +257,13 @@
     nnoremap <silent> <leader>- :execute "resize " . (winheight(0) - 10)<cr>
 
     " Add a semicolon at the end of the line
-    nnoremap as :<c-u>execute "normal! mqA;\<lt>esc>`q"<cr>
+    nnoremap as :<c-u>execute "normal! mqg_a;\<lt>esc>`q"<cr>
+    
+    " Remove a semicolon at the end of the line
+    nnoremap rs :<c-u>execute "normal! mqg_x\<lt>esc>`q"<cr>
+
+    " Add curly braces '{}' to a loop
+    nnoremap ab :<c-u>execute "normal! g_a {<cr>\<lt>exc>jddkP"<cr>
 
     " Mapping for using grep
     nnoremap <leader>g :silent execute "grep! " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
@@ -295,7 +302,7 @@
 "{{{=> NERDTree Settings
 
     " Open NERDTree automatically when vim starts
-    autocmd vimenter * NERDTree 
+    " autocmd vimenter * NERDTree 
     
     " Open NERDTree if no file was specified with vim
     " autocmd StdinReadPre * let s:std_in=1
@@ -321,10 +328,13 @@
 "{{{=> Airline Settings
 
     " Set airline theme
-    let g:airline_theme = 'jellybeans'
+    let g:airline_theme = 'kolor'
     
     " Set airline to appear when one file is open
     set laststatus=2
+
+    " Don't shift focus to preview window for YCM
+    let g:airline_exclude_preview = 1
 
     " Enable fancy symbols 
     let g:airline_powerline_fonts = 1

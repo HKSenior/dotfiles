@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Hassani/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Path to dlib source fill
 # export dlib=/Users/Hassani/Documents/Code/C++/lib/dlib-18.16/dlib/all/source.cpp
@@ -53,13 +53,13 @@ ENABLE_CORRECTION="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# ZSH_CUSTOM=$HOME/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting osx extract chucknorris)
+plugins=(git zsh-syntax-highlighting osx extract)
 
 # User configuration
 # [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
@@ -103,8 +103,8 @@ d="dmd -run file_name.d -de -w -unittest"
 source ~/.oh-my-zsh/lib/alias.zsh
 
 # Path to eyes & ghosts source file
-source /usr/local/bin/eyes
-source /usr/local/bin/ghosts 
+# source /usr/local/bin/eyes
+# source /usr/local/bin/ghosts 
 
 # Souce completion for tmuxinator
 # source ~/.completion/tmuxinator.zsh
@@ -119,7 +119,7 @@ source /usr/local/bin/ghosts
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Source zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add the path to xv6 gcc executables to the path
 export PATH=/Users/Hassani/gcc-cross/toolchain/bin:$PATH

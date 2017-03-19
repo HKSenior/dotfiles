@@ -1,9 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Path to dlib source fill
-# export dlib=/Users/Hassani/Documents/Code/C++/lib/dlib-18.16/dlib/all/source.cpp
-
 # Path to link X11 lib
 export Xlib=-I/usr/X11R6/include
 
@@ -95,10 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# My variables
-google="'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'"
-d="dmd -run file_name.d -de -w -unittest"
-
 # Source the aliases
 source ~/.oh-my-zsh/lib/alias.zsh
 
@@ -122,4 +115,4 @@ source ~/.oh-my-zsh/lib/alias.zsh
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Add the path to xv6 gcc executables to the path
-export PATH=/Users/Hassani/gcc-cross/toolchain/bin:$PATH
+export PATH=$PATH:/Users/Hassani/gcc-cross/toolchain/bin

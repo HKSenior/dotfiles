@@ -1,16 +1,27 @@
 import os
 import ycm_core
 
+# These are the compilation flags that will be used in case there's no
+# compilation database set (by default, one is not set).
+# CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
-    '-Wall',
-    '-O3',
-    '-std=c++11',
-    '-x',
-    '/System/Library/Frameworks/Python.framework/Headers',
-    '-I/usr/include',
+'-Wall',
+'-Wextra',
+'-Werror',
+'-fexceptions',
+'-DNDEBUG',
+'-std=c++11',
+'-x',
+'c++',
+'-isystem',
+'/usr/include',
+'-isystem',
+'/usr/local/include',
+'-isystem',
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
+'-isystem',
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
 ]
-
-libDirs = ['/usr/include/c++']
 
 compilation_database_folder = ''
 
@@ -31,13 +42,6 @@ def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   new_flags = []
   make_next_absolute = False
   path_flags = [ '-isystem', '-I', '-iquote', '--sysroot=' ]
-
-  for libDir in libDirs:
-    for path, dirs, files in os.walk(libDir):
-      for d in dirs:
-        flag = '-I' + os.path.join(path, d)
-        flags.append(flag)
-
   for flag in flags:
     new_flag = flag
 
@@ -84,6 +88,8 @@ def GetCompilationInfoForFile( filename ):
   return database.GetCompilationInfoForFile( filename )
 
 
+# This is the entry point; this function is called by ycmd to produce flags for
+# a file.
 def FlagsForFile( filename, **kwargs ):
   if database:
     # Bear in mind that compilation_info.compiler_flags_ does NOT return a
@@ -95,20 +101,8 @@ def FlagsForFile( filename, **kwargs ):
     final_flags = MakeRelativePathsInFlagsAbsolute(
       compilation_info.compiler_flags_,
       compilation_info.compiler_working_dir_ )
-
-    # NOTE: This is just for YouCompleteMe; it's highly likely that your project
-    # does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR
-    # ycm_extra_conf IF YOU'RE NOT 100% SURE YOU NEED IT.
-    #try:
-    #  final_flags.remove( '-stdlib=libc++' )
-    #except ValueError:
-    #  pass
-  
   else:
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
 
-  return {
-    'flags': final_flags,
-    'do_cache': True
-  }
+  return { 'flags': final_flags }

@@ -357,6 +357,10 @@
 
 "{{{=> YCM Settings
 
+    " For debugging
+    let g:ycm_server_keep_logfiles = 1
+    let g:ycm_server_log_level = 'debug'
+
     " Set the path for the backup config file
     let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 

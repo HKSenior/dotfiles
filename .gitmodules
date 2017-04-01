@@ -73,3 +73,9 @@
 [submodule "vim/.vim/bundle/vim-latex-live-preview"]
 	path = vim/.vim/bundle/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule "vim/.vim/bundle/vim-autotag"]
+	path = vim/.vim/bundle/vim-autotag
+	url = https://github.com/craigemery/vim-autotag.git
+[submodule "vim/.vim/bundle/unite.vim"]
+	path = vim/.vim/bundle/unite.vim
+	url = https://github.com/Shougo/unite.vim.git

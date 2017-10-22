@@ -452,3 +452,12 @@
     "
     let g:tagbar_autoclose=0
 "}}}
+
+"{{{=> Go Code
+    let g:go_highlight_trailing_whitespace_error=0
+
+    au InsertEnter *.go match goSpaceError /\s\+\%#\@<!$/
+    au InsertLeave *.go match goSpaceError /\s\+$/
+
+"}}}
+

@@ -61,7 +61,7 @@ plugins=(git zsh-syntax-highlighting osx extract)
 # User configuration
 # [[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin/"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin/:/home/hassani/.cargo/bin/"
 export PATH="/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 

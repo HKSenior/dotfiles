@@ -1,0 +1,122 @@
+########### Terminal alias ###########
+
+
+##### Moving around #####
+
+# Make moving from dir to dir a little easier
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
+alias .......="cd ../../../../../"
+
+# Go to the home dir
+alias home="cd ~"
+
+# Clear the console
+alias c='clear'
+
+# List the dir. contents using exa
+alias l="exa -Flhai"
+
+# Go to the dev dir
+alias dev="cd ~/.dev"
+
+# Go to the config dir
+alias config="cd ~/.config"
+
+
+##### General #####
+
+alias f='open -a Finder ./'
+
+# Show hidden files
+alias show="defaults write com.apple.finder AppleShowAllFiles YES"
+
+# Hide hidden files
+alias hide="defaults write com.apple.finder AppleShowAllFiles NO"
+
+
+##### Get info #####
+
+# Get your internal IP address
+alias myip="ifconfig | grep inet | awk 'NR==5{print;exit}' | awk '{print $2}' "
+
+# Get your external IP address
+alias myextip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/"
+
+# Open a file
+alias open="open -a"
+
+# Show the available shells
+alias shells="cat /etc/shells"
+
+# What is the current shell?
+alias current_shell="echo $SHELL"
+
+# What is the current OS?
+alias os="echo $OSTYPE"
+
+# The users username
+alias user="echo $USERNAME"
+
+# Who is currently logged in?
+alias users="who"
+
+# Print the PATH variable
+alias path="echo $PATH"
+
+# What is the name of the CPU?
+alias cpu="sysctl -n machdep.cpu.brand_string"
+
+# Current list of DNS servers
+alias dnsservers="cat /etc/resolv.conf"
+
+
+##### Open files #####
+
+# Open the vim config file
+alias vimconfig="vim ~/.vimrc"
+
+# Open the zsh config file
+alias zshconfig="vim ~/.zshrc"
+
+# Open the tmux config file
+alias tmuxconfig="vim ~/.tmux.conf"
+
+# Open the alias file for ZSH
+alias editalias="vim ~/.config/dotfiles/.zsh_alias"
+
+##### Sourcing files #####
+
+# Reload bash
+alias sourcebash="source ~/.bash_profile"
+
+# Relod ZSH
+alias sourcezsh="source ~/.zshrc"
+
+# Reload tmux
+alias sourcetmux="tmux source-file ~/.tmux.conf"
+
+
+##### Git aliases #####
+
+# Git username
+alias git_username="git config user.name"
+
+# Git email address
+alias git_email="git config user.email"
+
+# Git config
+alias git_settings="git config --list"
+
+
+##### Tmux alias #####
+
+alias tmux="tmux -2"
+alias ta="tmux attach -t"
+alias tnew="tmux new -s"
+alias tls="tmux ls"
+alias tkill="tmux kill-session -t"
+

@@ -88,6 +88,7 @@ alias tmuxconfig="vim ~/.tmux.conf"
 # Open the alias file for ZSH
 alias editalias="vim ~/.config/dotfiles/.zsh_alias"
 
+
 ##### Sourcing files #####
 
 # Reload bash

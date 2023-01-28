@@ -266,7 +266,7 @@ call plug#end()
     " Map <leader>u to change the letters to lowercase
     nnoremap <leader>u vawu
 
-    " Map <leader>la and <leader>lb to add a new line after/before respectivly
+    " Map <leader>a and <leader>b to add a new line after/before respectivly
     nnoremap <leader>a O<Esc>
     nnoremap <leader>b o<Esc>
 

@@ -9,8 +9,9 @@ call plug#begin()
     Plug 'nanotech/jellybeans.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'xavierd/clang_complete'
-
-    " Initialize plugin system
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "}}}

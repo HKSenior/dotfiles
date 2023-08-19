@@ -246,17 +246,11 @@ call plug#end()
     " Remap the jump to line command to the enter button (e.x. 123gg -> 123<ENTER>)
     noremap <cr> G
 
-    " Remap :LLPStartPreview's to <leader>lp
-    " nnoremap <leader>lp :LLPStartPreview<cr>
-
     " Move to the next tab
     nnoremap <leader>m gt<cr>
 
     " Move back one tab
     nnoremap <leader>n gT<cr>
-
-    " Map <leader>s to show the full diagnostic text in YCM
-    " let g:ycm_key_detailed_diagnostics = '<leader>s'
 
     " Map <leader><leader>u to change the letters to UPPERCASE
     nnoremap <leader><leader>u vawU
@@ -312,19 +306,6 @@ call plug#end()
 
         " Change the name of a function
         onoremap fn :<c-u>execute "normal! [m^Wviw"<cr>
-
-    "}}}
-
-    "{{{=> Folding mappings
-
-        " Set <leader>A to recursively open/close a group of folder lines
-        nnoremap <leader>A zA
-
-        " Set <leader>R to open all folds in a file
-        nnoremap <leader>R zR
-
-        " Set <leader>M to close folds
-        nnoremap <leader>M zM
 
     "}}}
 

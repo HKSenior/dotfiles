@@ -278,8 +278,8 @@ call plug#end()
     " Execute the line that I am on
     nnoremap <leader>x :exec getline(".")<cr>
 
-    " Set 0 to go to the first character in a lien
-    nnoremap 0 ^
+    " Set 0 to go to the first character in a line
+    " nnoremap 0 ^
 
     " Move to the last character on the line
     nnoremap <leader>l g_

@@ -3,13 +3,10 @@
 "{{{=> Plugins
 
 call plug#begin()
-    " * Make sure you use single quotes
-    " List of plugins
     Plug 'junegunn/vim-easy-align'
     Plug 'easymotion/vim-easymotion'
     Plug 'tpope/vim-vividchalk'
     Plug 'nanotech/jellybeans.vim'
-    Plug 'vim-scripts/AutoComplPop'
     Plug 'vim-airline/vim-airline'
     Plug 'xavierd/clang_complete'
 

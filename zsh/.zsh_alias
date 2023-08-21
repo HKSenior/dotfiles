@@ -92,13 +92,13 @@ alias ealias="vim ~/.config/dotfiles/zsh/.zsh_alias"
 ##### Sourcing files #####
 
 # Reload bash
-alias sourcebash="source ~/.bash_profile"
+alias rbash="source ~/.bash_profile"
 
 # Relod ZSH
-alias sourcezsh="source ~/.zshrc"
+alias rzsh="source ~/.zshrc"
 
 # Reload tmux
-alias sourcetmux="tmux source-file ~/.tmux.conf"
+alias rtmux="tmux source-file ~/.tmux.conf"
 
 
 ##### Git aliases #####

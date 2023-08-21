@@ -121,3 +121,13 @@ alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -t"
 
+##### Vim alias #####
+
+# alias vim="nvim"
+
+alias dirsize='human_readable_dir_size'
+
+human_readable_dir_size(){
+    du -h $1 | tail -n 1
+}
+

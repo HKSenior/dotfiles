@@ -77,16 +77,16 @@ alias dnsservers="cat /etc/resolv.conf"
 ##### Open files #####
 
 # Open the vim config file
-alias vimconfig="vim ~/.vimrc"
+alias evim="vim ~/.vimrc"
 
 # Open the zsh config file
-alias zshconfig="vim ~/.zshrc"
+alias ezsh="vim ~/.zshrc"
 
 # Open the tmux config file
-alias tmuxconfig="vim ~/.tmux.conf"
+alias etmux="vim ~/.tmux.conf"
 
 # Open the alias file for ZSH
-alias editalias="vim ~/.config/dotfiles/.zsh_alias"
+alias ealias="vim ~/.config/dotfiles/zsh/.zsh_alias"
 
 
 ##### Sourcing files #####

@@ -12,6 +12,28 @@ export EDITOR="vim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
+envPaths=$(printenv PATH)
+gopath=$(go env GOPATH)
+declare -a paths=(
+    # Homebrew binaries
+    "/opt/homebrew/opt/llvm/bin"
+    "/opt/homebrew/opt/openjdk/bin"
+
+    # GOPATH dir
+    "${gopath}/bin"
+)
+
+for i in "${paths[@]}"
+do
+    if [[ "$envPaths" != *"$i"* ]]; then
+        export PATH="${i}:${PATH}"
+    fi
+done
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each

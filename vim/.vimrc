@@ -1,6 +1,17 @@
-"$(EXECUTABLE): vim: foldmethod=marker 
+"$(EXECUTABLE): vim: foldmethod=marker
+"
+" $$\    $$\ $$\                      $$$$$$\                       $$$$$$\  
+" $$ |   $$ |\__|                    $$  __$$\                     $$  __$$\ 
+" $$ |   $$ |$$\ $$$$$$\$$$$\        $$ /  \__| $$$$$$\  $$$$$$$\  $$ /  \__|
+" \$$\  $$  |$$ |$$  _$$  _$$\       $$ |      $$  __$$\ $$  __$$\ $$$$\     
+"  \$$\$$  / $$ |$$ / $$ / $$ |      $$ |      $$ /  $$ |$$ |  $$ |$$  _|    
+"   \$$$  /  $$ |$$ | $$ | $$ |      $$ |  $$\ $$ |  $$ |$$ |  $$ |$$ |      
+"    \$  /   $$ |$$ | $$ | $$ |      \$$$$$$  |\$$$$$$  |$$ |  $$ |$$ |      
+"     \_/    \__|\__| \__| \__|       \______/  \______/ \__|  \__|\__|      
+"
+" A customized .vimrc for vim 
 
-"{{{=> Plugins
+"{{{=> Plugins{{{
 
 call plug#begin()
     Plug 'junegunn/vim-easy-align'
@@ -14,7 +25,7 @@ call plug#begin()
     Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-"}}}
+"}}}}}}
 
 "{{{=> General
 
@@ -84,7 +95,7 @@ call plug#end()
 
 "}}}
 
-"{{{=> Vim user interface
+"{{{=> Vim user interfacu
 "
     "Stop using the arrows
     nnoremap <up> <nop>
@@ -177,6 +188,10 @@ call plug#end()
 
     " Use unix as standard file type
     set ffs=unix,dos,mac
+
+    " Create ruler at column 80
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=52 guibg=DarkRed
 
 "}}}
 
@@ -273,7 +288,10 @@ call plug#end()
     " Tell vim not to be fancy when pasting in code with its own indentation
     " * is vim's systems clipboard register
     " ] tells vim to paste the code in at the current level of indentation
-    nnoremap <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+    " nnoremap <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
+    " Clear the _ register and paste the previous content
+    vnoremap <leader>p "_dP 
 
     " Execute the line that I am on
     nnoremap <leader>x :exec getline(".")<cr>
@@ -301,6 +319,12 @@ call plug#end()
 
     " Mapping for using grep
     nnoremap <leader>g :silent execute "grep! " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
+    " Move to the next fold
+    nnoremap <C-i> zj
+
+    " Move to the previous fold
+    nnoremap <BS> zk
 
     "{{{=> Operator-pending
 

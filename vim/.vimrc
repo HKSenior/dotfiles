@@ -23,6 +23,7 @@ call plug#begin()
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "}}}}}}
@@ -190,6 +191,7 @@ call plug#end()
     set ffs=unix,dos,mac
 
     " Create ruler at column 80
+    " httpsv//vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim
     set colorcolumn=80
     highlight ColorColumn ctermbg=52 guibg=DarkRed
 

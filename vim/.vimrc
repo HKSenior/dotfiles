@@ -11,7 +11,7 @@
 "
 " A customized .vimrc for vim 
 
-"{{{=> Plugins{{{
+"{{{=> Plugins
 
 call plug#begin()
     Plug 'junegunn/vim-easy-align'
@@ -26,7 +26,7 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
 call plug#end()
 
-"}}}}}}
+"}}}
 
 "{{{=> General
 

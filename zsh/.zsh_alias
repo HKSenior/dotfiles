@@ -37,6 +37,9 @@ alias show="defaults write com.apple.finder AppleShowAllFiles YES"
 # Hide hidden files
 alias hide="defaults write com.apple.finder AppleShowAllFiles NO"
 
+# Find pervious command
+alias gh="history | grep"
+
 
 ##### Get info #####
 
@@ -125,7 +128,7 @@ alias tkill="tmux kill-session -t"
 
 # alias vim="nvim"
 
-alias dirsize='human_readable_dir_size'
+alias ds='human_readable_dir_size'
 
 human_readable_dir_size(){
     du -h $1 | tail -n 1

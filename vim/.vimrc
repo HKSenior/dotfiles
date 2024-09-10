@@ -24,6 +24,8 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'jiangmiao/auto-pairs'
     Plug 'tpope/vim-fugitive'
+    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+    Plug 'marciomazza/vim-brogrammer-theme'
 call plug#end()
 
 "}}}
@@ -162,6 +164,9 @@ call plug#end()
     " Set the amount of time vim waits for the next keystroke
     set timeoutlen=325
 
+    " Show tabs
+    set showtabline=2
+    
 "}}}
 
 "{{{=> Colors and Fonts
@@ -169,12 +174,15 @@ call plug#end()
     " Enable syntax highlighting
     syntax enable
 
+    " Set terminal colors
+    set termguicolors
+    
     " Use the dark theme
     set background=dark
 
     " Set colorscheme
-    colorscheme jellybeans
-
+    colorschem jellybeans
+    
     " Use hybrid custom terminal colors
     let g:hybrid_custom_term_colors = 1
 

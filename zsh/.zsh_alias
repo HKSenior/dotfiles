@@ -17,11 +17,11 @@ alias home="cd ~"
 # Clear the console
 alias c='clear'
 
-# List the dir. contents using exa
-alias l="exa -Flhai"
+# List the directories contents using lsd
+alias l="lsd -al"
 
 # Go to the dev dir
-alias dev="cd ~/.dev"
+alias dev="cd ~/dev"
 
 # Go to the config dir
 alias config="cd ~/.config"
@@ -40,6 +40,14 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles NO"
 # Find pervious command
 alias gh="history | grep"
 
+# Clear nvim cache
+alias clear_nvim_cache="rm -rf ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim"
+
+# Allow blaze to point to bazel
+alias blaze=bazel
+
+# Use Google Chrome cookies when downloading youtube videos
+alias cyt-dlp="yt-dlp --cookies-from-browser chrome"
 
 ##### Get info #####
 
@@ -80,16 +88,19 @@ alias dnsservers="cat /etc/resolv.conf"
 ##### Open files #####
 
 # Open the vim config file
-alias evim="vim ~/.vimrc"
+alias evim="nvim ~/.vimrc"
+
+# Open neovim init.lua
+alias envim="nvim ~/.config/nvim/init.lua"
 
 # Open the zsh config file
-alias ezsh="vim ~/.zshrc"
+alias ezsh="nvim ~/.zshrc"
 
 # Open the tmux config file
-alias etmux="vim ~/.tmux.conf"
+alias etmux="nvim ~/.tmux.conf"
 
 # Open the alias file for ZSH
-alias ealias="vim ~/.config/dotfiles/zsh/.zsh_alias"
+alias ealias="nvim ~/.config/dotfiles/zsh/.zsh_alias"
 
 
 ##### Sourcing files #####

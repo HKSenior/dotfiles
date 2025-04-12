@@ -12,7 +12,7 @@ return {
         ensure_installed = {
           'lua_ls',
           'clangd',
-          'tsserver',
+          --'tsserver',
           'harper_ls',
         },
       })
@@ -24,7 +24,7 @@ return {
       local lspconfig = require('lspconfig')
       lspconfig.lua_ls.setup({})
       lspconfig.clangd.setup({})
-      lspconfig.ts_ls.setup({})
+      -- lspconfig.ts_ls.setup({})
       lspconfig.harper_ls.setup {
         settings = {
           ["harper-ls"] = {

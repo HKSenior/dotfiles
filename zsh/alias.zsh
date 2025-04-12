@@ -17,8 +17,8 @@ alias home="cd ~"
 # Clear the console
 alias c='clear'
 
-# List the directories contents using lsd
-alias l="lsd -al"
+# List the directories contents using eza
+alias l="eza -laH"
 
 # Go to the dev dir
 alias dev="cd ~/dev"

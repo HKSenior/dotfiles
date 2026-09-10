@@ -100,7 +100,7 @@ alias ezsh="nvim ~/.zshrc"
 alias etmux="nvim ~/.tmux.conf"
 
 # Open the alias file for ZSH
-alias ealias="nvim ~/.config/dotfiles/zsh/.zsh_alias"
+alias ealias="nvim ~/.oh-my-zsh/lib/alias.zsh"
 
 
 ##### Sourcing files #####
@@ -130,10 +130,20 @@ alias git_settings="git config --list"
 ##### Tmux alias #####
 
 alias tmux="tmux -2"
+
+# Open a workspace
 alias ta="tmux attach -t"
-alias tnew="tmux new -s"
+
+# Create a new session
+alias tnew="tmux new-session -s"
+alias tpasta="tmux new-session -s pasta -n home"
+
+# List workspaces
 alias tls="tmux ls"
+
+# Kill the given workspace
 alias tkill="tmux kill-session -t"
+
 
 ##### Vim alias #####
 
@@ -144,4 +154,9 @@ alias ds='human_readable_dir_size'
 human_readable_dir_size(){
     du -h $1 | tail -n 1
 }
+
+
+##### Binary alias #####
+
+alias blaze="bazel"
 
